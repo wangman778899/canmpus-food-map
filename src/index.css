@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-scale-in {
+  animation: scaleIn 0.35s ease-out;
+}
+
+/* 地图上自定义 Pin 标记：悬停放大 + 阴影加深 */
+.pin-marker {
+  border: none !important;
+  background: none !important;
+}
+.pin-marker .pin-outer {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.pin-marker:hover .pin-outer {
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+}
+
+/* 状态图标呼吸灯：微弱缩放 + 透明度变化，模拟实时数据 */
+@keyframes breatheLight {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+.breathe-light {
+  animation: breatheLight 2s ease-in-out infinite;
+}
