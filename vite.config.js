@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // 使用相对路径，避免 GitHub Pages 子路径下资源 404
-  base: './',
+  base: '/canmpus-food-map/',
 })
